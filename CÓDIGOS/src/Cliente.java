@@ -1,18 +1,24 @@
-public class Cliente {
+import java.util.ArrayList;
+
+public class Cliente{
     private String nome;
     private String sobrenome;
     private int idade;
     private String CPF;
     private String endereço;
+    private ArrayList<Pet> pets;
 
     public Cliente(){};
-    public Cliente(String nome, String sobrenome, int idade, String CPF, String endereço) {
+    public Cliente(String nome, String sobrenome, int idade, String cpf, String endereço) {}
+    public Cliente(String nome, String sobrenome, int idade, String CPF, String endereço, ArrayList<Pet> pets){
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.idade = idade;
         this.CPF = CPF;
         this.endereço = endereço;
+        this.pets = new ArrayList<Pet>();
     }
+
 
     @Override
     public String toString() {
@@ -69,8 +75,17 @@ public class Cliente {
         System.out.println(avaliação);
     }
 
-    public void selecionarTarefa(String tipo){
+    //mudanças, ao invés de um método para escolher a classe passeio, creche ou hospedagem, criei os metodos das três.
+    public void hospedagem(String entrada, String saida, float periodo, String local, String detalhes){
+        Hospedagem hospedagem = new Hospedagem(entrada, saida, periodo, local, detalhes);
+    }
 
+    public void creche(String data, float hora, float duracao, String detalhes){
+        Creche creche = new Creche(data, hora, duracao, detalhes);
+    }
+
+    public void passeio(String data, float hora, float duracao, String detalhes){
+        Passeio passeio = new Passeio(data, hora, duracao, detalhes);
     }
 
     public void cadastrarPet(String nomePet, int idadePet, String tipo, String detalhes){
