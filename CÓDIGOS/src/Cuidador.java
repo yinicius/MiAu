@@ -2,17 +2,17 @@ public class Cuidador {
     private String nome;
     private String sobrenome;
     private int idade;
-    private String cpf;
+    private String CPF;
     private String endereço;
     private String detalhes;
 
-    public Cuidador(String n, String s, int ida, String cpf, String end, String det) {
-        this.nome = n;
-        this.sobrenome = s;
-        this.idade = ida;
-        this.cpf = cpf;
-        this.detalhes = end;
-        this.endereço = det;
+    public Cuidador(String nome, String sobrenome, int idade, String CPF, String endereço, String detalhes) {
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.idade = idade;
+        this.CPF = CPF;
+        this.endereço = endereço;
+        this.detalhes = detalhes;
     }
 
 
@@ -41,11 +41,11 @@ public class Cuidador {
     }
 
     public String getCpf() {
-        return cpf;
+        return CPF;
     }
 
     public void setCpf(String cpf) {
-        this.cpf = cpf;
+        this.CPF = CPF;
     }
 
     public String getEndereço() {

@@ -2,6 +2,7 @@ import java.util.Scanner;
 public class Principal {
     public static void main(String[] args) {
         Gerente gerente = new Gerente();
+        GerenteCuidador gerenteCuidador = new GerenteCuidador();
         Scanner scanner = new Scanner(System.in);
         boolean stop = true;
         System.out.println("Digite 1 para adicionar cliente. \n" +
@@ -10,28 +11,72 @@ public class Principal {
                            "Digite 4 para adicionar um pet gato. \n" +
                            "Digite 5 para mostrar \n" +
                            "Digite 6 para sair");
+        String nome;
+        String nomePet;
+        String sobrenome;
+        int idade;
+        int idadePet;
+        String raça;
+        String CPF;
+        String line;
+        String endereço;
         while(stop) {
             String op = scanner.nextLine();
             switch (op){
                 case "1":
-                    String line1 = scanner.nextLine();
-                    String[] ui1 = line1.split(" ");
-                    gerente.adicionarCliente(ui1[0], ui1[1], Integer.parseInt(ui1[2]), ui1[3], ui1[4]);
+                    System.out.println("Digite o nome");
+                    nome = scanner.nextLine();
+                    System.out.println("Digite o sobrenome");
+                    sobrenome = scanner.nextLine();
+                    System.out.println("Digite a idade");
+                    idade = scanner.nextInt();
+                    System.out.println("Digite o CPF");
+                    CPF = scanner.nextLine();
+                    line = scanner.nextLine();
+                    System.out.println("Digite o endereço");
+                    endereço = scanner.nextLine();
+                    gerente.adicionarCliente(nome, sobrenome, idade, CPF, endereço);
                     break;
                 case "2":
-                    String line2 = scanner.nextLine();
-                    String[] ui2 = line2.split(" ");
-                    Cuidador cuidador = new Cuidador(ui2[0], ui2[1], Integer.parseInt(ui2[2]), ui2[3], ui2[4], ui2[5]);
+                    System.out.println("Digite o nome");
+                    nome = scanner.nextLine();
+                    System.out.println("Digite o sobrenome");
+                    sobrenome = scanner.nextLine();
+                    System.out.println("Digite a idade");
+                    idade = scanner.nextInt();
+                    System.out.println("Digite o CPF");
+                    CPF = scanner.nextLine();
+                    System.out.println("Digite o endereço");
+                    endereço = scanner.nextLine();
+                    System.out.println("Digite o detalhes");
+                    String detalhes = scanner.nextLine();
+                    gerenteCuidador.adicionarCuidador(nome, sobrenome, idade, CPF, endereço, detalhes);
                     break;
                 case "3":
-                    String line3 = scanner.nextLine();
-                    String[] ui3 = line3.split(" ");
-                    Cachorro cachorro = new Cachorro(ui3[0], Integer.parseInt(ui3[1]), ui3[2], ui3[3]);
+                    System.out.println("Digite o CPF");
+                    CPF = scanner.nextLine();
+                    System.out.println("Digite o nome do Pet");
+                    nomePet = scanner.nextLine();
+                    System.out.println("Digite a idade do Pet");
+                    idadePet = scanner.nextInt();
+                    System.out.println("Digite os detalhes");
+                    detalhes = scanner.nextLine();
+                    System.out.println("Digite a raça");
+                    raça = scanner.nextLine();
+                    gerente.cadastrarGato(CPF, nomePet, idadePet, detalhes, raça);
                     break;
                 case "4":
-                    String line4 = scanner.nextLine();
-                    String[] ui4 = line4.split(" ");
-                    Gato gato = new Gato(ui4[0], Integer.parseInt(ui4[1]), ui4[2], ui4[3]);
+                    System.out.println("Digite o CPF");
+                    CPF = scanner.nextLine();
+                    System.out.println("Digite o nome do Pet");
+                    nomePet = scanner.nextLine();
+                    System.out.println("Digite a idade do Pet");
+                    idadePet = scanner.nextInt();
+                    System.out.println("Digite os detalhes");
+                    detalhes = scanner.nextLine();
+                    System.out.println("Digite a raça");
+                    raça = scanner.nextLine();
+                    gerente.cadastrarCachorro(CPF, nomePet, idadePet, detalhes, raça);
                     break;
                 case "5":
                     System.out.println(gerente.getClientes());

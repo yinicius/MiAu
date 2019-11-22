@@ -18,7 +18,6 @@ public class Cliente{
         this.pets = new ArrayList<Pet>();
     }
 
-
     @Override
     public String toString() {
         return "Cliente{" +
@@ -27,6 +26,7 @@ public class Cliente{
                 ", idade=" + idade +
                 ", CPF='" + CPF + '\'' +
                 ", endereço='" + endereço + '\'' +
+                ", pets=" + pets +
                 '}';
     }
 
@@ -86,7 +86,11 @@ public class Cliente{
         Passeio passeio = new Passeio(data, hora, duracao, detalhes);
     }
 
-    public void cadastrarPet(String nomePet, int idadePet, String tipo, String detalhes){
-        Pet animal = new Pet(nomePet, idadePet, detalhes);
+    public void cadastrarGato(Gato gato){
+        pets.add(gato);
+    }
+
+    public void cadastrarCachorro(Cachorro cachorro){
+        pets.add(cachorro);
     }
 }
