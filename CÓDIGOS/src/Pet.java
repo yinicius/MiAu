@@ -1,15 +1,15 @@
+import java.util.ArrayList;
+
 public class Pet {
     private String nomePet;
     private int idade;
-    private String tipo;
     private String detalhes;
+    private ArrayList<Pet> pets;
 
     public Pet(){};
-    public Pet(String nomePet, int idade, String detalhes) {}
-    public Pet(String nomePet, int idade, String tipo, String detalhes) {
+    public Pet(String nomePet, int idade, String detalhes) {
         this.nomePet = nomePet;
         this.idade = idade;
-        this.tipo = tipo;
         this.detalhes = detalhes;
     }
 
@@ -19,7 +19,6 @@ public class Pet {
                 "nomePet='" + nomePet + '\'' +
                 ", idade=" + idade +
                 ", detalhes='" + detalhes + '\'' +
-                ", tipo='" + tipo + '\'' +
                 '}';
     }
 

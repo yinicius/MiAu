@@ -89,6 +89,6 @@ public class Cliente{
     }
 
     public void cadastrarPet(String nomePet, int idadePet, String tipo, String detalhes){
-        Pet animal = new Pet(nomePet, idadePet, tipo, detalhes);
+        Pet animal = new Pet(nomePet, idadePet, detalhes);
     }
 }

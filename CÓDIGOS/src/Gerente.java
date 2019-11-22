@@ -5,7 +5,7 @@ public class Gerente {
 
     public Gerente(){}
     public Gerente(ArrayList<Cliente> clientes) {
-        this.clientes = clientes;
+        this.clientes = new ArrayList<Cliente>();
     }
 
     @Override
@@ -24,6 +24,7 @@ public class Gerente {
 
     public void adicionarCliente(String nome, String sobrenome, int idade, String CPF, String endereço){
         Cliente cliente = new Cliente(nome, sobrenome, idade, CPF, endereço);
+        clientes.add(cliente);
     }
 
 }
