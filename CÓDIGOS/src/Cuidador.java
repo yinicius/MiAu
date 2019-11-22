@@ -3,15 +3,15 @@ public class Cuidador {
     private String sobrenome;
     private int idade;
     private String CPF;
-    private String endereço;
+    private String endereco;
     private String detalhes;
 
-    public Cuidador(String nome, String sobrenome, int idade, String CPF, String endereço, String detalhes) {
+    public Cuidador(String nome, String sobrenome, int idade, String CPF, String endereco, String detalhes) {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.idade = idade;
         this.CPF = CPF;
-        this.endereço = endereço;
+        this.endereco = endereco;
         this.detalhes = detalhes;
     }
 
@@ -48,12 +48,12 @@ public class Cuidador {
         this.CPF = CPF;
     }
 
-    public String getEndereço() {
-        return endereço;
+    public String getEndereco() {
+        return endereco;
     }
 
-    public void setEndereço(String endereço) {
-        this.endereço = endereço;
+    public void setEndereco(String endereço) {
+        this.endereco = endereço;
     }
 
     public String getDetalhes() {

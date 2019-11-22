@@ -1,16 +1,16 @@
 public class Cachorro extends Pet {
-    private String raça;
+    private String raca;
 
     public Cachorro(){};
-    public Cachorro(String nomePet, int idade, String detalhes, String raça){
+    public Cachorro(String nomePet, int idade, String detalhes, String raca){
         super(nomePet, idade, detalhes);
-        this.raça = raça;
+        this.raca = raca;
     }
 
     @Override
     public String toString() {
         return "Cachorro{" +
-                "raça='" + raça + '\'' +
+                "raça='" + raca + '\'' +
                 '}';
     }
 }

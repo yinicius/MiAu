@@ -1,26 +1,29 @@
 import java.util.Scanner;
 public class Principal {
+    public static void menu() {
+        System.out.println("Digite 1 para adicionar cliente. \n" +
+                "Digite 2 para adicionar cuidador. \n" +
+                "Digite 3 para adicionar um pet cachorro. \n" +
+                "Digite 4 para adicionar um pet gato. \n" +
+                "Digite 5 para mostrar gerente \n" +
+                "Digite 6 para mostrar cliente");
+    }
     public static void main(String[] args) {
         Gerente gerente = new Gerente();
         GerenteCuidador gerenteCuidador = new GerenteCuidador();
         Scanner scanner = new Scanner(System.in);
         boolean stop = true;
-        System.out.println("Digite 1 para adicionar cliente. \n" +
-                           "Digite 2 para adicionar cuidador. \n" +
-                           "Digite 3 para adicionar um pet cachorro. \n" +
-                           "Digite 4 para adicionar um pet gato. \n" +
-                           "Digite 5 para mostrar \n" +
-                           "Digite 6 para sair");
         String nome;
         String nomePet;
         String sobrenome;
         int idade;
         int idadePet;
-        String raça;
+        String raca;
         String CPF;
         String line;
-        String endereço;
+        String endereco;
         while(stop) {
+            menu();
             String op = scanner.nextLine();
             switch (op){
                 case "1":
@@ -34,8 +37,8 @@ public class Principal {
                     CPF = scanner.nextLine();
                     line = scanner.nextLine();
                     System.out.println("Digite o endereço");
-                    endereço = scanner.nextLine();
-                    gerente.adicionarCliente(nome, sobrenome, idade, CPF, endereço);
+                    endereco = scanner.nextLine();
+                    gerente.adicionarCliente(nome, sobrenome, idade, CPF, endereco);
                     break;
                 case "2":
                     System.out.println("Digite o nome");
@@ -47,10 +50,10 @@ public class Principal {
                     System.out.println("Digite o CPF");
                     CPF = scanner.nextLine();
                     System.out.println("Digite o endereço");
-                    endereço = scanner.nextLine();
+                    endereco = scanner.nextLine();
                     System.out.println("Digite o detalhes");
                     String detalhes = scanner.nextLine();
-                    gerenteCuidador.adicionarCuidador(nome, sobrenome, idade, CPF, endereço, detalhes);
+                    gerenteCuidador.adicionarCuidador(nome, sobrenome, idade, CPF, endereco, detalhes);
                     break;
                 case "3":
                     System.out.println("Digite o CPF");
@@ -62,8 +65,8 @@ public class Principal {
                     System.out.println("Digite os detalhes");
                     detalhes = scanner.nextLine();
                     System.out.println("Digite a raça");
-                    raça = scanner.nextLine();
-                    gerente.cadastrarGato(CPF, nomePet, idadePet, detalhes, raça);
+                    raca = scanner.nextLine();
+                    gerente.cadastrarGato(CPF, nomePet, idadePet, detalhes, raca);
                     break;
                 case "4":
                     System.out.println("Digite o CPF");
@@ -75,8 +78,8 @@ public class Principal {
                     System.out.println("Digite os detalhes");
                     detalhes = scanner.nextLine();
                     System.out.println("Digite a raça");
-                    raça = scanner.nextLine();
-                    gerente.cadastrarCachorro(CPF, nomePet, idadePet, detalhes, raça);
+                    raca = scanner.nextLine();
+                    gerente.cadastrarCachorro(CPF, nomePet, idadePet, detalhes, raca);
                     break;
                 case "5":
                     System.out.println(gerente.getClientes());

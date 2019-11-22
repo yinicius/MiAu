@@ -5,16 +5,16 @@ public class Cliente{
     private String sobrenome;
     private int idade;
     private String CPF;
-    private String endereço;
+    private String endereco;
     private ArrayList<Pet> pets;
 
     public Cliente(){};
-    public Cliente(String nome, String sobrenome, int idade, String CPF, String endereço){
+    public Cliente(String nome, String sobrenome, int idade, String CPF, String endereco){
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.idade = idade;
         this.CPF = CPF;
-        this.endereço = endereço;
+        this.endereco = endereco;
         this.pets = new ArrayList<Pet>();
     }
 
@@ -25,7 +25,7 @@ public class Cliente{
                 ", sobrenome='" + sobrenome + '\'' +
                 ", idade=" + idade +
                 ", CPF='" + CPF + '\'' +
-                ", endereço='" + endereço + '\'' +
+                ", endereço='" + endereco + '\'' +
                 ", pets=" + pets +
                 '}';
     }
@@ -62,12 +62,12 @@ public class Cliente{
         this.CPF = CPF;
     }
 
-    public String getEndereço() {
-        return endereço;
+    public String getEndereco() {
+        return endereco;
     }
 
-    public void setEndereço(String endereço) {
-        this.endereço = endereço;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
     public void fazerAvalaiação(Avaliação avaliação){

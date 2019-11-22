@@ -21,8 +21,8 @@ public class GerenteCuidador {
         this.cuidadores = cuidadores;
     }
 
-    public void adicionarCuidador(String nome, String sobrenome, int idade, String CPF, String endereço, String detalhes){
-        Cuidador cuidador = new Cuidador(nome, sobrenome, idade, CPF, endereço, detalhes);
+    public void adicionarCuidador(String nome, String sobrenome, int idade, String CPF, String endereco, String detalhes){
+        Cuidador cuidador = new Cuidador(nome, sobrenome, idade, CPF, endereco, detalhes);
         cuidadores.add(cuidador);
     }
 
@@ -35,13 +35,13 @@ public class GerenteCuidador {
         return false;
     }
 
-    public void editarCuidador(String cpf,String nome, String sobrenome, int idade, String CPF, String endereço, String detalhes){
+    public void editarCuidador(String cpf, String nome, String sobrenome, int idade, String CPF, String endereco, String detalhes){
         int posicao = buscarIndiceCuidador(cpf);
         cuidadores.get(posicao).setNome(nome);
         cuidadores.get(posicao).setSobrenome(sobrenome);
         cuidadores.get(posicao).setIdade(idade);
         cuidadores.get(posicao).setCpf(CPF);
-        cuidadores.get(posicao).setEndereço(endereço);
+        cuidadores.get(posicao).setEndereco(endereco);
         cuidadores.get(posicao).setDetalhes(detalhes);
 
     }
