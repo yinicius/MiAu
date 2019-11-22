@@ -8,7 +8,7 @@ public class Cliente{
     private String endereco;
     private ArrayList<Pet> pets;
 
-    public Cliente(){};
+//    public Cliente(){};
     public Cliente(String nome, String sobrenome, int idade, String CPF, String endereco){
         this.nome = nome;
         this.sobrenome = sobrenome;

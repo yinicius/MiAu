@@ -2,9 +2,19 @@ import java.util.ArrayList;
 
 public class Gerente {
     private ArrayList<Cliente> clientes;
-
-    public Gerente( ) {
+    private static Gerente gerente;
+    private Gerente( ) {
         this.clientes = new ArrayList<Cliente>();
+        Cliente cliente =  new Cliente("Gui", "Rodrigues", 20,"1","aaa");
+        clientes.add(cliente);
+
+    }
+
+    public static Gerente getInstance(){
+        if(gerente == null){
+            gerente = new Gerente();
+        }
+        return gerente;
     }
 
     @Override
@@ -21,9 +31,13 @@ public class Gerente {
         this.clientes = clientes;
     }
 
-    public void adicionarCliente(String nome, String sobrenome, int idade, String CPF, String endereco){
-        Cliente cliente = new Cliente(nome, sobrenome, idade, CPF, endereco);
-        clientes.add(cliente);
+    public void adicionarCliente(String nome, String sobrenome, int idade, String CPF, String endereco) throws Exception {
+        if(buscarCliente(CPF) == null){
+            Cliente cliente = new Cliente(nome, sobrenome, idade, CPF, endereco);
+            clientes.add(cliente);
+        }else {
+            throw  new Exception("Erro CPF já cadastrado");
+        }
     }
 
     public void cadastrarGato(String CPF, String nomePet, int idadePet, String detalhes, String raca){

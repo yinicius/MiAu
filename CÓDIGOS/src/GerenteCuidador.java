@@ -5,7 +5,9 @@ public class GerenteCuidador {
     private Gerente gerente;
     public GerenteCuidador(){
         cuidadores = new ArrayList<Cuidador>();
-        gerente = new Gerente();
+        gerente = Gerente.getInstance();
+        Cuidador cuidador =  new Cuidador("Gui", "Rodrigues", 20,"2","aaa", "UHUM");
+        cuidadores.add(cuidador);
     }
 
     @Override
@@ -73,7 +75,7 @@ public class GerenteCuidador {
     
     public void agendarHospedagem(int cuidador,String cpf, int periodo, String local, String detalhes) {
     	if(gerente.verificarCliente(cpf)) {
-    		if(gerente.buscarCliente(cpf).getPets().size() >= 1) {
+    		if(gerente.buscarCliente(cpf).getPets().size() > 0) {
     			Hospedagem hospedagem = new Hospedagem(periodo, local, detalhes);
     			cuidadores.get(cuidador-1).hospedagem(hospedagem);
     		}
@@ -82,7 +84,7 @@ public class GerenteCuidador {
     
     public void agendarPasseio(int cuidador,String cpf, String data, float hora, float duracao, String detalhes) {
     	if(gerente.verificarCliente(cpf)) {
-    		if(gerente.buscarCliente(cpf).getPets().size() >= 1) {
+    		if(gerente.buscarCliente(cpf).getPets().size() > 0) {
     			Passeio passeio = new Passeio(data, hora, duracao, detalhes);
     			cuidadores.get(cuidador-1).passeio(passeio);
     		}
@@ -91,7 +93,7 @@ public class GerenteCuidador {
     
     public void agendarCreche(int cuidador, String cpf, String data, float hora, float duracao, String detalhes) {
     	if(gerente.verificarCliente(cpf)) {
-    		if(gerente.buscarCliente(cpf).getPets().size() >= 1) {
+    		if(gerente.buscarCliente(cpf).getPets().size() > 0) {
     			Creche creche = new Creche(data, hora, duracao, detalhes);
     			cuidadores.get(cuidador-1).creche(creche);
     		}

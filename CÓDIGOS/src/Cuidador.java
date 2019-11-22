@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cuidador {
@@ -7,9 +8,9 @@ public class Cuidador {
     private String CPF;
     private String endereco;
     private String detalhes;
-    private List<Hospedagem> hospedagens;
-    private List<Creche> creches;
-    private List<Passeio> passeios;
+    private ArrayList<Hospedagem> hospedagens;
+    private ArrayList<Creche> creches;
+    private ArrayList<Passeio> passeios;
     
     public Cuidador(String nome, String sobrenome, int idade, String CPF, String endereco, String detalhes) {
         this.nome = nome;
@@ -18,8 +19,26 @@ public class Cuidador {
         this.CPF = CPF;
         this.endereco = endereco;
         this.detalhes = detalhes;
+        hospedagens = new ArrayList<Hospedagem>();
+        creches = new ArrayList<Creche>();
+        passeios = new ArrayList<Passeio>();
+
     }
 
+    @Override
+    public String toString() {
+        return "Cuidador{" +
+                "nome='" + nome + '\'' +
+                ", sobrenome='" + sobrenome + '\'' +
+                ", idade=" + idade +
+                ", CPF='" + CPF + '\'' +
+                ", endereco='" + endereco + '\'' +
+                ", detalhes='" + detalhes + '\'' +
+                ", hospedagens=" + hospedagens.size() +
+                ", creches=" + creches.size() +
+                ", passeios=" + passeios.size() +
+                '}';
+    }
 
     public String getNome() {
         return nome;
@@ -85,27 +104,27 @@ public class Cuidador {
 	}
 
 
-	public void setHospedagens(List<Hospedagem> hospedagens) {
+	public void setHospedagens(ArrayList<Hospedagem> hospedagens) {
 		this.hospedagens = hospedagens;
 	}
 
 
-	public List<Creche> getCreches() {
+	public ArrayList<Creche> getCreches() {
 		return creches;
 	}
 
 
-	public void setCreches(List<Creche> creches) {
+	public void setCreches(ArrayList<Creche> creches) {
 		this.creches = creches;
 	}
 
 
-	public List<Passeio> getPasseios() {
+	public ArrayList<Passeio> getPasseios() {
 		return passeios;
 	}
 
 
-	public void setPasseios(List<Passeio> passeios) {
+	public void setPasseios(ArrayList<Passeio> passeios) {
 		this.passeios = passeios;
 	}
     
