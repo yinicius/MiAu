@@ -9,8 +9,7 @@ public class Cliente{
     private ArrayList<Pet> pets;
 
     public Cliente(){};
-    public Cliente(String nome, String sobrenome, int idade, String cpf, String endereço) {}
-    public Cliente(String nome, String sobrenome, int idade, String CPF, String endereço, ArrayList<Pet> pets){
+    public Cliente(String nome, String sobrenome, int idade, String CPF, String endereço){
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.idade = idade;
@@ -75,7 +74,6 @@ public class Cliente{
         System.out.println(avaliação);
     }
 
-    //mudanças, ao invés de um método para escolher a classe passeio, creche ou hospedagem, criei os metodos das três.
     public void hospedagem(String entrada, String saida, float periodo, String local, String detalhes){
         Hospedagem hospedagem = new Hospedagem(entrada, saida, periodo, local, detalhes);
     }

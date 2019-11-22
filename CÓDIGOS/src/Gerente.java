@@ -3,8 +3,7 @@ import java.util.ArrayList;
 public class Gerente {
     private ArrayList<Cliente> clientes;
 
-    public Gerente(){}
-    public Gerente(ArrayList<Cliente> clientes) {
+    public Gerente( ) {
         this.clientes = new ArrayList<Cliente>();
     }
 
@@ -26,5 +25,4 @@ public class Gerente {
         Cliente cliente = new Cliente(nome, sobrenome, idade, CPF, endereço);
         clientes.add(cliente);
     }
-
 }
