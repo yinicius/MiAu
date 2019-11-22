@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
-public class Avaliação{
+public class Avaliacao{
     private String nome;
     private float nota;
     private String detalhes;
 
-    public Avaliação(){};
-    public Avaliação(String nome, float nota, String detalhes) {
+    public Avaliacao(){};
+    public Avaliacao(String nome, float nota, String detalhes) {
         this.nome = nome;
         this.nota = nota;
         this.detalhes = detalhes;
@@ -14,7 +14,7 @@ public class Avaliação{
 
     @Override
     public String toString() {
-        return "Avaliação{" +
+        return "Avaliacao{" +
                 "nome='" + nome + '\'' +
                 ", nota=" + nota +
                 ", detalhes='" + detalhes + '\'' +

@@ -1,39 +1,25 @@
 public class Hospedagem {
-    private String entrada;
-    private String saida;
-    private float periodo;
+    private int periodo;
     private String local;
     private String detalhes;
 
-    public Hospedagem(String entrada, String saida, float periodo, String local, String detalhes) {
-        this.entrada = entrada;
-        this.saida = saida;
+    public Hospedagem(int periodo, String local, String detalhes) {
         this.periodo = periodo;
-        this.local = local;
+    	this.local = local;
         this.detalhes = detalhes;
     }
-    @Override
-    public String toString() {
-        return "Serviço de hospedagem agendado do dia " + entrada + " ao dia " +saida+ ", em " + local
-                + ". Observações: " + detalhes;
-    }
+    
 
-    public String getEntrada() {
-        return entrada;
-    }
-    public void setEntrada(String entrada) {
-        this.entrada = entrada;
-    }
-    public String getSaida() {
-        return saida;
-    }
-    public void setSaida(String saida) {
-        this.saida = saida;
-    }
-    public float getPeriodo() {
+    @Override
+	public String toString() {
+		return "Hospedagem [periodo=" + periodo + ", local=" + local + ", detalhes=" + detalhes + "]";
+	}
+
+
+    public int getPeriodo() {
         return periodo;
     }
-    public void setPeriodo(float periodo) {
+    public void setPeriodo(int periodo) {
         this.periodo = periodo;
     }
     public String getLocal() {

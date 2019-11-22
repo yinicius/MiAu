@@ -70,21 +70,10 @@ public class Cliente{
         this.endereco = endereco;
     }
 
-    public void fazerAvalaiação(Avaliação avaliação){
-        System.out.println(avaliação);
+    public void fazerAvalaiacao(Avaliacao avaliacao){
+        System.out.println(avaliacao);
     }
 
-    public void hospedagem(String entrada, String saida, float periodo, String local, String detalhes){
-        Hospedagem hospedagem = new Hospedagem(entrada, saida, periodo, local, detalhes);
-    }
-
-    public void creche(String data, float hora, float duracao, String detalhes){
-        Creche creche = new Creche(data, hora, duracao, detalhes);
-    }
-
-    public void passeio(String data, float hora, float duracao, String detalhes){
-        Passeio passeio = new Passeio(data, hora, duracao, detalhes);
-    }
 
     public void cadastrarGato(Gato gato){
         pets.add(gato);
@@ -93,4 +82,11 @@ public class Cliente{
     public void cadastrarCachorro(Cachorro cachorro){
         pets.add(cachorro);
     }
+	public ArrayList<Pet> getPets() {
+		return pets;
+	}
+	public void setPets(ArrayList<Pet> pets) {
+		this.pets = pets;
+	}
+    
 }

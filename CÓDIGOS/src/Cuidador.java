@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Cuidador {
     private String nome;
     private String sobrenome;
@@ -5,7 +7,10 @@ public class Cuidador {
     private String CPF;
     private String endereco;
     private String detalhes;
-
+    private List<Hospedagem> hospedagens;
+    private List<Creche> creches;
+    private List<Passeio> passeios;
+    
     public Cuidador(String nome, String sobrenome, int idade, String CPF, String endereco, String detalhes) {
         this.nome = nome;
         this.sobrenome = sobrenome;
@@ -52,8 +57,8 @@ public class Cuidador {
         return endereco;
     }
 
-    public void setEndereco(String endereço) {
-        this.endereco = endereço;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
     public String getDetalhes() {
@@ -64,4 +69,55 @@ public class Cuidador {
         this.detalhes = detalhes;
     }
 
+
+	public String getCPF() {
+		return CPF;
+	}
+
+
+	public void setCPF(String cPF) {
+		CPF = cPF;
+	}
+
+
+	public List<Hospedagem> getHospedagens() {
+		return hospedagens;
+	}
+
+
+	public void setHospedagens(List<Hospedagem> hospedagens) {
+		this.hospedagens = hospedagens;
+	}
+
+
+	public List<Creche> getCreches() {
+		return creches;
+	}
+
+
+	public void setCreches(List<Creche> creches) {
+		this.creches = creches;
+	}
+
+
+	public List<Passeio> getPasseios() {
+		return passeios;
+	}
+
+
+	public void setPasseios(List<Passeio> passeios) {
+		this.passeios = passeios;
+	}
+    
+    public void hospedagem(Hospedagem hospedagem){
+        hospedagens.add(hospedagem);
+    }
+
+    public void creche(Creche creche){
+        creches.add(creche);
+    }
+
+    public void passeio(Passeio passeio){
+        passeios.add(passeio);
+    }
 }
