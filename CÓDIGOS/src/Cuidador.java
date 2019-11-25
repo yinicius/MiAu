@@ -11,6 +11,7 @@ public class Cuidador {
     private ArrayList<Hospedagem> hospedagens;
     private ArrayList<Creche> creches;
     private ArrayList<Passeio> passeios;
+    private ArrayList<Avaliacao> avaliacoes;
     
     public Cuidador(String nome, String sobrenome, int idade, String CPF, String endereco, String detalhes) {
         this.nome = nome;
@@ -22,22 +23,24 @@ public class Cuidador {
         hospedagens = new ArrayList<Hospedagem>();
         creches = new ArrayList<Creche>();
         passeios = new ArrayList<Passeio>();
+        avaliacoes = new ArrayList<Avaliacao>();
 
     }
 
-    @Override
+    public ArrayList<Avaliacao> getAvaliacoes() {
+		return avaliacoes;
+	}
+
+	public void setAvaliacoes(ArrayList<Avaliacao> avaliacoes) {
+		this.avaliacoes = avaliacoes;
+	}
+
+	@Override
     public String toString() {
-        return "Cuidador{" +
-                "nome='" + nome + '\'' +
-                ", sobrenome='" + sobrenome + '\'' +
-                ", idade=" + idade +
-                ", CPF='" + CPF + '\'' +
-                ", endereco='" + endereco + '\'' +
-                ", detalhes='" + detalhes + '\'' +
-                ", hospedagens=" + hospedagens.size() +
-                ", creches=" + creches.size() +
-                ", passeios=" + passeios.size() +
-                '}';
+       return "\nPerfil do cuidador :)\n" + "Nome: " + nome + "\n" + "Sobrenome: " + sobrenome + "\n" + "Idade: " + idade 
+    		   + "\n" + "CPF: " + CPF + "\n" + "Endereço: " + endereco + "\n" + "Detalhes: " + detalhes + "\n" + "Hospedagens: "
+    		   + hospedagens.size() + "\n" + "Creches: " + creches.size() + "\n" + "Passeios: " + passeios.size() + "\n" + 
+    		   "Avaliações de clientes: " + avaliacoes;
     }
 
     public String getNome() {
@@ -69,7 +72,7 @@ public class Cuidador {
     }
 
     public void setCpf(String cpf) {
-        this.CPF = CPF;
+        this.CPF = cpf;
     }
 
     public String getEndereco() {
@@ -138,5 +141,9 @@ public class Cuidador {
 
     public void passeio(Passeio passeio){
         passeios.add(passeio);
+    }
+    
+    public void avaliacao(Avaliacao avaliacao) {
+    	avaliacoes.add(avaliacao);
     }
 }

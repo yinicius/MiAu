@@ -12,7 +12,7 @@ public class Hospedagem {
 
     @Override
 	public String toString() {
-		return "Hospedagem [periodo=" + periodo + ", local=" + local + ", detalhes=" + detalhes + "]";
+		return "Hospedagem com periódo de: " + periodo + "em " + local + ". Detalhes: " + detalhes;
 	}
 
 
@@ -35,9 +35,9 @@ public class Hospedagem {
         this.detalhes = detalhes;
     }
 
-    public float pagamento(){
+    public void pagamento(){
         float valor = 80;
         float pagamento = this.periodo*valor;
-        return pagamento;
+        System.out.print("O valor final da hospedagem �: R$" + pagamento + "\n");
     }
 }

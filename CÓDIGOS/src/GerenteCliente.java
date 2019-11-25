@@ -1,26 +1,30 @@
 import java.util.ArrayList;
 
-public class Gerente {
+public class GerenteCliente {
     private ArrayList<Cliente> clientes;
-    private static Gerente gerente;
-    private Gerente( ) {
+    private static GerenteCliente gerente;
+    private GerenteCliente( ) {
         this.clientes = new ArrayList<Cliente>();
-        Cliente cliente =  new Cliente("Gui", "Rodrigues", 20,"1","aaa");
-        clientes.add(cliente);
+        Cliente cliente4 =  new Cliente("Vinícius", "Melo", 20, "4","Rua Epitácio Pessoa");
+        clientes.add(cliente4);
+        Cliente cliente5 =  new Cliente("Letícia", "Mirella", 19, "5","Rua Ramlive");
+        clientes.add(cliente5);
+        Cliente cliente6 =  new Cliente("Carlos", "Almeida", 21, "6","Rua Praça Leão");
+        clientes.add(cliente6);
 
     }
 
-    public static Gerente getInstance(){
+    public static GerenteCliente getInstance(){
         if(gerente == null){
-            gerente = new Gerente();
+            gerente = new GerenteCliente();
         }
         return gerente;
     }
 
     @Override
     public String toString() {
-        return "Gerente \n" +
-                "clientes = " + clientes;
+        return "Gerente de clientes! \n" +
+                "Lista de clientes: \n" + clientes;
     }
 
     public ArrayList<Cliente> getClientes() {
@@ -35,8 +39,9 @@ public class Gerente {
         if(buscarCliente(CPF) == null){
             Cliente cliente = new Cliente(nome, sobrenome, idade, CPF, endereco);
             clientes.add(cliente);
-        }else {
-            throw  new Exception("Erro CPF já cadastrado");
+        }else  {
+            throw  new Exception("Erro CPF já, cadastrado");
+            
         }
     }
 
@@ -69,14 +74,17 @@ public class Gerente {
         return -1;
     }
 
-    public void editarCliente(String cpf,String nome, String sobrenome, int idade, String CPF, String endereco){
-        int posicao = buscarIndiceCliente(cpf);
-        clientes.get(posicao).setNome(nome);
-        clientes.get(posicao).setSobrenome(sobrenome);
-        clientes.get(posicao).setIdade(idade);
-        clientes.get(posicao).setCPF(CPF);
-        clientes.get(posicao).setEndereco(endereco);
-
+    public boolean editarCliente(String cpf,String nome, String sobrenome, int idade, String CPF, String endereco){
+        if(verificarCliente(cpf)) {
+        	int posicao = buscarIndiceCliente(cpf);
+            clientes.get(posicao).setNome(nome);
+            clientes.get(posicao).setSobrenome(sobrenome);
+            clientes.get(posicao).setIdade(idade);
+            clientes.get(posicao).setCPF(CPF);
+            clientes.get(posicao).setEndereco(endereco);
+            return true;
+        }
+    	return false;
     }
 
     public boolean removerCliente (String cpf) {

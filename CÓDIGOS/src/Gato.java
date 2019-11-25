@@ -9,8 +9,6 @@ public class Gato extends Pet {
 
     @Override
     public String toString() {
-        return "Gato{" +
-                "raça='" + raca + '\'' +
-                '}';
+        return "Gato{" + "Raça: \n" + raca;
     }
 }

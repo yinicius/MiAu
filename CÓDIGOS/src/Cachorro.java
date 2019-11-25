@@ -9,8 +9,6 @@ public class Cachorro extends Pet {
 
     @Override
     public String toString() {
-        return "Cachorro{" +
-                "raça='" + raca + '\'' +
-                '}';
+        return "Cachorro: " + "Raça: " + raca;
     }
 }

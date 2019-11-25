@@ -11,12 +11,13 @@ public class Creche {
     }
     @Override
     public String toString(){
-        return "Serviço de creche agendado para o dia " + data + ", às " + hora + " horas, com duração de " + duracao + " horas. Observações: " + detalhes;
+        return "Servi�o de creche agendado para o dia: " + data + "�s" + hora + " h, com dura��o de" + 
+    duracao + "horas. Observações: " + detalhes;
     }
-    public float pagamento (){
+    public void pagamento (){
         float valor=20;
         float pagamento = this.duracao*valor;
-        return pagamento;
+        System.out.print("O valor final da creche �: R$" + pagamento + "\n");
     }
     public String getData() {
         return data;

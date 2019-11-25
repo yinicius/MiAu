@@ -12,8 +12,8 @@ public class Passeio {
     }
     @Override
     public String toString() {
-        return "Passeio agendado para o dia " + data + ", Ã s " + hora + " horas, com duraÃ§Ã£o de " +
-                duracao + " horas. ObservaÃ§Ãµes: " + detalhes;
+        return "Passeio agendado para o dia " + data + "às" + hora + "h, com duração de " +
+                duracao + "horas. Observações: " + detalhes;
     }
 
     public String getData() {
@@ -41,9 +41,9 @@ public class Passeio {
         this.detalhes = detalhes;
     }
 
-    public float pagamento(){
+    public void pagamento(){
         float valor = 10;
         float pagamento = this.duracao*valor;
-        return pagamento;
+        System.out.print("O valor final do passeio é: R$" + pagamento + "\n");
     }
 }

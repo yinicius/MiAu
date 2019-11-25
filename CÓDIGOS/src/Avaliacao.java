@@ -1,34 +1,17 @@
-import java.util.Scanner;
-
 public class Avaliacao{
-    private String nome;
     private float nota;
     private String detalhes;
 
     public Avaliacao(){};
-    public Avaliacao(String nome, float nota, String detalhes) {
-        this.nome = nome;
+    public Avaliacao(float nota, String detalhes) {
         this.nota = nota;
         this.detalhes = detalhes;
     }
 
     @Override
     public String toString() {
-        return "Avaliacao{" +
-                "nome='" + nome + '\'' +
-                ", nota=" + nota +
-                ", detalhes='" + detalhes + '\'' +
-                '}';
+        return "\nNota:" + nota + "\nDetalhes: " + detalhes;
     }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
 
     public float getNota() {
         return nota;

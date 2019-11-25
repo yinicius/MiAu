@@ -15,11 +15,8 @@ public class Pet {
 
     @Override
     public String toString() {
-        return "Pet{" +
-                "nomePet='" + nomePet + '\'' +
-                ", idade=" + idade +
-                ", detalhes='" + detalhes + '\'' +
-                '}';
+        return "Perfil do pet! :) \n" + "Nome do pet: " + nomePet + "\n" + "Idade: " + idade + "\n" +
+                "Detalhes: " + detalhes;
     }
 
     public String getNomePet() {

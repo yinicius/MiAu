@@ -7,8 +7,8 @@ public class Cliente{
     private String CPF;
     private String endereco;
     private ArrayList<Pet> pets;
+    private ArrayList<Cuidador> cuidadores;
 
-//    public Cliente(){};
     public Cliente(String nome, String sobrenome, int idade, String CPF, String endereco){
         this.nome = nome;
         this.sobrenome = sobrenome;
@@ -16,25 +16,27 @@ public class Cliente{
         this.CPF = CPF;
         this.endereco = endereco;
         this.pets = new ArrayList<Pet>();
+        this.cuidadores = new ArrayList<Cuidador>();
     }
 
     @Override
     public String toString() {
-        return "Cliente{" +
-                "nome='" + nome + '\'' +
-                ", sobrenome='" + sobrenome + '\'' +
-                ", idade=" + idade +
-                ", CPF='" + CPF + '\'' +
-                ", endereço='" + endereco + '\'' +
-                ", pets=" + pets +
-                '}';
+        return "\n Perfil do cliente :)\n" + "Nome: " + nome + "\n" + "Sobrenome: " + sobrenome + "\n" + "Idade: " + idade + "\n" + "CPF: " + CPF + "\n" + "Endereço: " + endereco + "\n" + "Pets: " + pets;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public ArrayList<Cuidador> getCuidadores() {
+		return cuidadores;
+	}
+
+	public void setCuidadores(ArrayList<Cuidador> cuidadores) {
+		this.cuidadores = cuidadores;
+	}
+
+	public void setNome(String nome) {
         this.nome = nome;
     }
 
@@ -89,4 +91,7 @@ public class Cliente{
 		this.pets = pets;
 	}
     
+	public void adicionarCuidador(Cuidador cuidador) {
+		cuidadores.add(cuidador);
+	}
 }
